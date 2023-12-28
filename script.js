@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('drawing-canvas');
     const context = canvas.getContext('2d');
     let isDrawing = false;
@@ -111,4 +110,3 @@ document.addEventListener('DOMContentLoaded', function () {
     rectangleButton.addEventListener('click', function () {
         isDrawingRectangle = true;
     });
-});
