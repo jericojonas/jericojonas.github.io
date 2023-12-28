@@ -40,24 +40,22 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector("h1").addEventListener("click", function () {
         alert("Ouch! Stop poking me!");
       });
-
-
-    function paragrafClick() {
-            document.addEventListener("DOMContentLoaded", () => {
-          function createParagraph() {
-            const para = document.createElement("p");
-            para.textContent = "You clicked the button!";
-            document.body.appendChild(para);
-          }
-        
-          const paragraphs = document.querySelectorAll("p");
-        
-          for (const paragraph of paragraphs) {
-            paragraph.addEventListener("click", createParagraph);
-          }
-        });
+    
       
       
+        function createParagraph() {
+          const para = document.createElement("p");
+          para.textContent = "You clicked the button!";
+          document.body.appendChild(para);
+        }
+      
+        const paragraphs = document.querySelectorAll("p");
+      
+        for (const paragraph of paragraphs) {
+          paragraph.addEventListener("click", createParagraph);
+        }
+
+
 
     function startDrawing(e) {
         if (isDrawingRectangle) {
