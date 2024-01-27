@@ -1,16 +1,123 @@
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
 }
 
-#drawing-container {
-    border: 2px solid #000;
+.left-sidebar,
+.right-sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: #111;
+  padding-top: 20px;
 }
 
-#drawing-canvas {
-    cursor: crosshair;
+.left-sidebar {
+  left: 0;
+}
+
+.right-sidebar {
+  right: 0;
+}
+
+.left-sidebar h2,
+.right-sidebar h2 {
+  color: white;
+  text-align: center;
+}
+
+.left-sidebar label,
+.right-sidebar label {
+  color: white;
+  display: block;
+  margin: 10px 0;
+}
+
+.left-sidebar input,
+.left-sidebar button,
+.right-sidebar button {
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+}
+
+.left-sidebar button,
+.right-sidebar button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.left-sidebar button:hover,
+.right-sidebar button:hover {
+  background-color: #45a049;
+}
+
+.right-sidebar li {
+  color: white;
+}
+
+.content {
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 20px;
+}
+
+:root {
+  --lineColor: #000000; /* Default color */
+  --lineColorRect: #000000; /* Default color */
+  --lineColorTri: #000000; /* Default color */
+  --lineColorEl: #000000; /* Default color */
+  --lineWidth: 1; /* Default width */
+  --lineWidthRect: 1; /* Default width */
+  --lineWidthTri: 1; /* Default width */
+  --lineWidthEl: 1; /* Default width */
+}
+
+#lineColor[type="color"] {
+  /* Set the lineColor dynamically */
+  background-color: var(--lineColor);
+}
+
+#lineColorRect[type="color"] {
+  background-color: var(--lineColorRect);
+}
+
+#lineColorTri[type="color"] {
+  background-color: var(--lineColorTri);
+}
+
+#lineColorEl[type="color"] {
+  background-color: var(--lineColorEl);
+}
+
+.right-sidebar li.selected {
+  background-color: #4caf50; /* Highlight color for the selected layer */
+}
+
+#lineWidth[type="width"] {
+  /* Set the lineWidth dynamically */
+  width: var(--lineWidth);
+}
+
+#lineWidthRect[type="width"] {
+  width: var(--lineWidthRect);
+}
+
+#lineWidthTri[type="width"] {
+  width: var(--lineWidthTri);
+}
+
+#lineWidthEl[type="width"] {
+  width: var(--lineWidthEl);
 }
