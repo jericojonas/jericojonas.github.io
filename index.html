@@ -3,174 +3,411 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Drawing App</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Portfolio Front End</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        position: relative;
+        scroll-behavior: smooth;
+        background-color: #f8f9fa; /* Light background for better contrast */
+      }
+
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .navbar-light .navbar-nav .nav-link:hover {
+        color: #007bff; /* Change color on hover */
+        transition: color 0.3s; /* Smooth transition */
+      }
+
+      .navbar-nav .nav-link {
+        color: white; /* Set nav link color to white */
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #17a2b8; /* Change color on hover, adjust as necessary */
+        transition: color 0.3s; /* Smooth transition for hover effect */
+      }
+
+      .carousel-item img {
+        height: 350px;
+        object-fit: cover;
+      }
+
+      .progress-bar {
+        background-color: #17a2b8;
+        transition: width 1s; /* Smooth transition for width */
+      }
+
+      .scroll-progress {
+        position: fixed;
+        top: 56px; /* Height of the navbar */
+        left: 0;
+        width: 100%;
+        height: 5px; /* Height of the progress bar */
+        background-color: #007bff; /* Blue color for the progress */
+        transition: width 0.2s; /* Smooth transition */
+        z-index: 1030; /* Above other content */
+      }
+
+      .shadow-custom {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Custom shadow */
+        transition: box-shadow 0.3s; /* Smooth transition */
+      }
+
+      .shadow-custom:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+      }
+
+      .btn-primary {
+        background-color: #007bff; /* Custom primary button color */
+        border: none;
+        transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+        position: relative; /* Positioning context */
+        z-index: 3; /* Ensure it is above the overlay and text */
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3; /* Darker color on hover */
+        transform: translateY(-2px); /* Slight upward movement on hover */
+      }
+
+      .footer-link {
+        color: #ffffff; /* White color for footer links */
+        transition: color 0.3s; /* Smooth transition */
+      }
+
+      .footer-link:hover {
+        color: #17a2b8; /* Change color on hover */
+      }
+
+      .cover {
+        background: linear-gradient(
+          135deg,
+          #007bff,
+          #6610f2
+        ); /* Add your gradient colors */
+        height: 100vh; /* Full viewport height */
+        color: white; /* Text color */
+        position: relative; /* For positioning overlay */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        display: flex; /* Center content vertically and horizontally */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        text-align: center; /* Center text */
+        overflow: hidden; /* Prevent overflow of content */
+      }
+
+      .overlay {
+        position: absolute; /* Overlay on top of the background */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        z-index: 1; /* Ensure it is below the text and buttons */
+      }
+
+      .cover h1,
+      .cover p {
+        font-size: 4rem; /* Large title font size */
+        animation: fadeIn 1s forwards; /* Animation for entrance */
+        z-index: 2; /* Ensure it is above the overlay */
+        position: relative; /* To keep the stacking context */
+      }
+
+      .cover p {
+        font-size: 1.5rem; /* Subheading size */
+      }
+
+      /* Keyframes for fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px); /* Slide in from above */
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0); /* Normal position */
+        }
+      }
+
+      .contact-section {
+        background-color: #f0f0f0; /* Change to your preferred color */
+      }
+
+      /* Responsive Font Size for Cover Section */
+      @media (max-width: 768px) {
+        .cover h1 {
+          font-size: 3rem; /* Adjust heading font size for tablets and small screens */
+        }
+
+        .cover p {
+          font-size: 1.2rem; /* Adjust paragraph font size for tablets and small screens */
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .cover h1 {
+          font-size: 2.5rem; /* Further reduce heading font size for very small screens */
+        }
+
+        .cover p {
+          font-size: 1rem; /* Further reduce paragraph font size for very small screens */
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      /* Responsive Styles for Profile Image */
+      @media (max-width: 1920px) {
+        .profile-img {
+          width: 300px; /* Adjust width for mobile */
+          height: 300px; /* Maintain aspect ratio */
+        }
+      }
+
+      /* Responsive Styles for Profile Image */
+      @media (max-width: 768px) {
+        .profile-img {
+          width: 200px; /* Adjust width for mobile */
+          height: 200px; /* Maintain aspect ratio */
+          display: block; /* Ensure it's treated as a block element */
+          margin: -30px auto 20px auto; /* Negative top margin, centered horizontally, and add margin-bottom */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .profile-img {
+          width: 150px; /* Further reduce size for very small screens */
+          height: 150px; /* Maintain aspect ratio */
+          display: block; /* Ensure it's treated as a block element */
+          margin: -30px auto 20px auto; /* Negative top margin, centered horizontally, and add margin-bottom */
+        }
+      }
+
+      /* Custom background color for the contact section */
+    </style>
   </head>
 
-  <body>
-    <div class="leftSidebar">
-      <div class="sidebar left-sidebar" id="sidebarCircle">
-        <h2>Circle Style</h2>
+  <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-        <label for="circleRadius">Diameter:</label>
-        <input type="number" id="circleRadius" name="circleRadius" min="1" />
-
-        <label for="lineWidth">Line Width:</label>
-        <input type="number" id="lineWidth" name="lineWidth" min="1" />
-
-        <label for="lineColor">Line Color:</label>
-        <input type="color" id="lineColor" name="lineColor" />
-
-        <button type="button" id="applyStyleCircleBtn" onclick="circleEdit()">
-          Edit Style
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
 
-      <div class="sidebar left-sidebar" id="sidebarRectangle">
-        <h2>Rectangle Style</h2>
-
-        <label for="widthRect">Width:</label>
-        <input type="number" id="widthRect" name="widthRect" min="1" />
-
-        <label for="heightRect">Height:</label>
-        <input type="number" id="heightRect" name="heightRect" min="1" />
-
-        <label for="lineWidthRect">Line Width:</label>
-        <input type="number" id="lineWidthRect" name="lineWidthRect" min="1" />
-
-        <label for="lineColorRect">Line Color:</label>
-        <input type="color" id="lineColorRect" name="lineColorRect" />
-
-        <button type="button" id="applyStyleRectBtn" onclick="rectEdit()">
-          Edit Style
-        </button>
+    <!-- Cover Section -->
+    <section class="cover">
+      <div class="overlay"></div>
+      <!-- Dark overlay for text contrast -->
+      <div>
+        <h1 class="display-4">Welcome to My Portfolio</h1>
+        <p class="lead">
+          I'm a Front End Developer passionate about creating beautiful and
+          responsive web applications.
+        </p>
+        <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
       </div>
+    </section>
 
-      <div class="sidebar left-sidebar" id="sidebarTriangle">
-        <h2>Triangle Style</h2>
-
-        <label for="sideLength">Side Length:</label>
-        <input type="number" id="sideLength" name="sideLength" min="1" />
-
-        <label for="heightTri">Height:</label>
-        <input type="number" id="heightTri" name="heightTri" min="1" />
-
-        <label for="lineWidthTri">Line Width:</label>
-        <input type="number" id="lineWidthTri" name="lineWidthTri" min="1" />
-
-        <label for="lineColorTri">Line Color:</label>
-        <input type="color" id="lineColorTri" name="lineColorTri" />
-
-        <button type="button" id="applyStyleTriBtn" onclick="triEdit()">
-          Edit Style
-        </button>
+    <!-- About Me Section -->
+    <section id="about" class="py-5 mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <img src="https://i.ibb.co/7yLQNVy/profile.jpg" alt="Profile
+            Picture" class="img-fluid rounded-circle shadow-custom profile-img"
+            object-fit: cover" />
+          </div>
+          <div class="col-md-6">
+            <h2>About Me</h2>
+            <p>
+              Hi, I'm a Front End Developer with a passion for creating visually
+              appealing and responsive websites...
+            </p>
+            <!-- Skill Progress Bars -->
+            <h4>Skills</h4>
+            <div class="progress mb-3" data-skill="90">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 0%"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                HTML
+              </div>
+            </div>
+            <div class="progress mb-3" data-skill="80">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 0%"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                CSS
+              </div>
+            </div>
+            <div class="progress mb-3" data-skill="75">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 0%"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                JavaScript
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="sidebar left-sidebar" id="sidebarEllipse">
-        <h2>Ellipse Style</h2>
-
-        <label for="widthEllipse">Width:</label>
-        <input type="number" id="widthEllipse" name="widthEllipse" min="1" />
-
-        <label for="heightEllipse">Height:</label>
-        <input type="number" id="heightEllipse" name="heightEllipse" min="1" />
-
-        <label for="lineWidthEl">Line Width:</label>
-        <input type="number" id="lineWidthEl" name="lineWidthEl" min="1" />
-
-        <label for="lineColorEl">Line Color:</label>
-        <input type="color" id="lineColorEl" name="lineColorEl" />
-
-        <button type="button" id="applyStyleElBtn" onclick="elEdit()">
-          Edit Style
-        </button>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card shadow-custom mb-4">
+              <img src="project1.jpg" class="card-img-top" alt="Project 1" />
+              <div class="card-body">
+                <h5 class="card-title">Project 1</h5>
+                <p class="card-text">Description of project 1.</p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-custom mb-4">
+              <img src="project2.jpg" class="card-img-top" alt="Project 2" />
+              <div class="card-body">
+                <h5 class="card-title">Project 2</h5>
+                <p class="card-text">Description of project 2.</p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-custom mb-4">
+              <img src="project3.jpg" class="card-img-top" alt="Project 3" />
+              <div class="card-body">
+                <h5 class="card-title">Project 3</h5>
+                <p class="card-text">Description of project 3.</p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="content">
-      <nav class="navigationMenu">
-        <label for="canvasSize">New Canvas Size:</label>
-        <select id="canvasSize">
-          <optgroup label="Standard Printed Sizes">
-            <option value="A2">A2</option>
-            <option value="A3">A3</option>
-            <option value="A4">A4</option>
-            <!-- Add more standard sizes as needed -->
-          </optgroup>
-          <optgroup label="Computer Screen Resolutions">
-            <option value="4K">4K</option>
-            <option value="2K">2K</option>
-            <option value="FHD">FHD</option>
-            <option value="HD">HD</option>
-            <!-- Add more screen resolutions as needed -->
-          </optgroup>
-        </select>
-        <button type="button" id="newCanvasBtn">New Canvas</button>
-        <button type="button" id="clearCanvasBtn">Clear Canvas</button>
-      </nav>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 contact-section">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p>
+          If you'd like to get in touch, feel free to reach out via email or
+          social media.
+        </p>
+        <!-- Add your contact form or details here -->
+      </div>
+    </section>
 
-      <form id="defaultForm">
-        <label for="defaultLineWidth">Line Width:</label>
-        <input
-          type="number"
-          id="defaultLineWidth"
-          name="defaultLineWidth"
-          min="1"
-          value="1"
-        />
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container text-center">
+        <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        |
+        <a href="#" class="footer-link">Terms of Service</a>
+      </div>
+    </footer>
 
-        <label for="defaultLineColor">Line Color:</label>
-        <input
-          type="color"
-          id="defaultLineColor"
-          name="defaultLineColor"
-          value="#000000"
-        />
-      </form>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Scroll progress bar
+        const scrollProgress = document.getElementById("scrollProgress");
+        const updateScrollProgress = () => {
+          const scrollTotal =
+            document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPosition = window.scrollY;
+          const progressWidth = (scrollPosition / scrollTotal) * 100;
+          scrollProgress.style.width = progressWidth + "%";
+        };
+        window.addEventListener("scroll", updateScrollProgress);
+        updateScrollProgress(); // Initialize progress bar width
 
-      <form id="shapeForm">
-        <label for="shapeType">Select Shape:</label>
-        <select id="shapeType" name="shapeType">
-          <option value="circle">Circle</option>
-          <option value="rectangle">Rectangle</option>
-          <option value="triangle">Triangle</option>
-          <option value="ellipse">Ellipse</option>
-        </select>
-        <label for="shapeCount">Number of Shapes:</label>
-        <input
-          type="number"
-          id="shapeCount"
-          name="shapeCount"
-          min="1"
-          required
-        />
+        // Skill progress animation
+        const skillBars = document.querySelectorAll(".progress-bar");
 
-        <button type="button" id="drawShapeBtn">Draw</button>
-      </form>
+        // Observer for triggering the skill animation
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                skillBars.forEach((bar) => {
+                  const skillValue = bar.parentElement.dataset.skill; // Fetch skill value from data attribute
+                  bar.style.width = skillValue + "%"; // Set width for animation
+                  bar.setAttribute("aria-valuenow", skillValue); // Set aria attribute for accessibility
+                });
+                observer.unobserve(entry.target); // Stop observing once animated
+              }
+            });
+          },
+          {
+            threshold: 0.5, // Trigger when 50% of the element is visible
+          }
+        );
 
-      <canvas
-        id="drawingCanvas"
-        width="500"
-        height="300"
-        onmousedown="startMove(event)"
-        onmouseup="stopMove()"
-        onmousemove="moveShape(event)"
-      ></canvas>
-    </div>
-
-    <div class="sidebar right-sidebar">
-      <h2>Layers</h2>
-      <div id="layers"></div>
-    </div>
-
-    <script src="currentValue.js"></script>
-    <script src="logic.js"></script>
-    <script src="draw.js"></script>
-    <script src="select.js"></script>
-    <script src="move.js"></script>
-    <script src="sidebar.js"></script>
-    <script src="canvas.js"></script>
-    <script src="edit.js"></script>
-    <!--script src="script.js"></script-->
+        // Observe the about section for the skill bars
+        const aboutSection = document.getElementById("about");
+        observer.observe(aboutSection);
+      });
+    </script>
   </body>
 </html>

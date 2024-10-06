@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Pricing</title>
+  <!-- Import Tailwind CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">My Online Store</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="index.html" class="text-gray-900 hover:text-gray-600">Home</a></li>
+          <li><a href="#products" class="text-gray-900 hover:text-gray-600">Products</a></li>
+          <li><a href="member.html" class="text-gray-900 hover:text-gray-600">Pricing</a></li>
+          <li><a href="#" class="text-gray-900 hover:text-gray-600">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Pricing Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Membership Pricing</h2>
+  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Membership 1 -->
+        <div class="bg-white shadow-md rounded-lg p-8 pb-20 text-center">
+          <h3 class="text-2xl font-bold mt-10 mb-6">Basic Membership</h3>
+          <p class="text-4xl font-bold text-blue-600 mb-6">$19</p>
+          <p class="text-gray-600 mb-6">Monthly Subscription</p>
+          <p class="text-lg text-gray-700 mb-6">10% discount on all products</p>
+          <a href="#signup" class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-500 transition duration-300">Join Now</a>
+        </div>
+  
+        <!-- Membership 2 -->
+        <div class="bg-white shadow-md rounded-lg p-8 pb-20 text-center">
+          <h3 class="text-2xl font-bold mt-10 mb-6">Standard Membership</h3>
+          <p class="text-4xl font-bold text-blue-600 mb-6">$39</p>
+          <p class="text-gray-600 mb-6">Monthly Subscription</p>
+          <p class="text-lg text-gray-700 mb-6">15% discount on all products</p>
+          <a href="#signup" class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-500 transition duration-300">Join Now</a>
+        </div>
+  
+        <!-- Membership 3 -->
+        <div class="bg-white shadow-md rounded-lg p-8 pb-20 text-center">
+          <h3 class="text-2xl font-bold mt-10 mb-6">Premium Membership</h3>
+          <p class="text-4xl font-bold text-blue-600 mb-6">$59</p>
+          <p class="text-gray-600 mb-6">Monthly Subscription</p>
+          <p class="text-lg text-gray-700 mb-6">20% discount on all products</p>
+          <a href="#signup" class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-500 transition duration-300">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+      
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFAQ('faq1')">
+            <span class="text-lg font-semibold">What is your return policy?</span>
+            <svg id="faq1" class="w-6 h-6 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4M8 15l4 4 4-4" />
+            </svg>
+          </button>
+          <div id="faq1Content" class="hidden p-4 text-gray-600">
+            <p>You can return any unopened product within 30 days of purchase for a full refund.</p>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 2 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFAQ('faq2')">
+            <span class="text-lg font-semibold">How long does shipping take?</span>
+            <svg id="faq2" class="w-6 h-6 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4M8 15l4 4 4-4" />
+            </svg>
+          </button>
+          <div id="faq2Content" class="hidden p-4 text-gray-600">
+            <p>Shipping usually takes 5-7 business days, depending on your location.</p>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 3 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFAQ('faq3')">
+            <span class="text-lg font-semibold">Do you offer international shipping?</span>
+            <svg id="faq3" class="w-6 h-6 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4M8 15l4 4 4-4" />
+            </svg>
+          </button>
+          <div id="faq3Content" class="hidden p-4 text-gray-600">
+            <p>Yes, we ship internationally. Shipping fees and times may vary based on location.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add the JavaScript function to toggle FAQs -->
+  <script>
+    function toggleFAQ(faqId) {
+      const content = document.getElementById(faqId + 'Content');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+      } else {
+        content.classList.add('hidden');
+      }
+    }
+  </script>
+
+  <!-- Contact Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row">
+      
+      <!-- Left Side: Contact Info -->
+      <div class="w-full md:w-1/2 p-8 bg-pattern bg-cover bg-center rounded-lg shadow-md" style="background-image: url('https://via.placeholder.com/600x400')">
+        <h2 class="text-2xl font-bold text-white mb-4">Contact Information</h2>
+        <p class="text-white mb-4">Feel free to reach out to us via any of the following methods:</p>
+        <p class="text-white mb-2"><strong>Email:</strong> support@example.com</p>
+        <p class="text-white mb-2"><strong>Phone:</strong> (123) 456-7890</p>
+        <p class="text-white mb-2"><strong>Address:</strong> 123 Main St, City, Country</p>
+      </div>
+
+      <!-- Right Side: Contact Form -->
+      <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md mt-8 md:mt-0">
+        <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
+        <form>
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700">Name</label>
+            <input type="text" id="name" class="w-full border border-gray-300 p-2 rounded-md" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700">Email</label>
+            <input type="email" id="email" class="w-full border border-gray-300 p-2 rounded-md" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700">Message</label>
+            <textarea id="message" rows="4" class="w-full border border-gray-300 p-2 rounded-md" required></textarea>
+          </div>
+          <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-500 transition duration-300">Send Message</button>
+        </form>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-blue-600 py-20">
+    <div class="container mx-auto px-4 py-10 text-center">
+      <h2 class="text-4xl font-bold text-white mb-6">Join Our Membership Today!</h2>
+      <p class="text-xl text-blue-100 mb-8">Get your special discount now! Sign up for our newsletter and never miss a deal.</p>
+      <a href="#sign-up" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">Sign Up Now</a>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-200 py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-xl font-bold mb-4">My Online Store</h3>
+          <p class="text-gray-300">
+            Your one-stop shop for the latest products and great deals.
+          </p>
+          <p class="text-gray-300 mt-4">
+            123 Main St, City, Country <br>
+            support@example.com <br>
+            (123) 456-7890
+          </p>
+        </div>
+        
+        <!-- Useful Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Useful Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Terms & Conditions</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Shipping & Returns</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">FAQs</a></li>
+          </ul>
+        </div>
+        
+        <!-- Customer Service -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Customer Service</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Contact Us</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Track Order</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Return Policy</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Gift Cards</a></li>
+          </ul>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-300 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M22.675 0H1.326C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.326 24H12.82v-9.296H9.692V11.06h3.128V8.408c0-3.1 1.892-4.786 4.659-4.786 1.325 0 2.465.098 2.797.142v3.243l-1.919.001c-1.505 0-1.797.715-1.797 1.763v2.31h3.594l-.468 3.644h-3.126V24h6.127C23.407 24 24 23.407 24 22.675V1.326C24 .593 23.407 0 22.675 0z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.938 13.938 0 0 1 1.671 3.149 4.92 4.92 0 0 0 3.179 9.723a4.901 4.901 0 0 1-2.229-.616v.062a4.915 4.915 0 0 0 3.946 4.818 4.902 4.902 0 0 1-2.224.084 4.92 4.92 0 0 0 4.588 3.417A9.868 9.868 0 0 1 0 19.54a13.905 13.905 0 0 0 7.548 2.213c9.056 0 14.009-7.504 14.009-14.01 0-.214-.005-.427-.014-.639A10.025 10.025 0 0 0 24 4.557z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2.163c-5.514 0-9.837 4.483-9.837 9.837 0 4.367 2.835 8.073 6.73 9.384.491.09.67-.213.67-.474v-1.675c-2.788.606-3.381-1.14-3.381-1.14-.447-1.136-1.091-1.439-1.091-1.439-.892-.616.068-.604.068-.604 1.04.075 1.586 1.068 1.586 1.068.907 1.556 2.378 1.107 2.955.847.092-.656.355-1.106.648-1.36-2.224-.253-4.56-1.112-4.56-4.952 0-1.093.39-1.987 1.033-2.684-.104-.253-.448-1.272.099-2.65 0 0 .841-.269 2.752 1.025A9.606 9.606 0 0 1 12 6.84c.852.004 1.709.114 2.509.334 1.91-1.296 2.749-1.025 2.749-1.025.548 1.378.204 2.397.101 2.65.644.697 1.032 1.591 1.032 2.684 0 3.85-2.339 4.696-4.568 4.944.366.316.692.94.692 1.898v2.812c0 .262.179.566.675.471 3.896-1.311 6.73-5.017 6.73-9.384 0-5.354-4.323-9.837-9.837-9.837z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+  
+      <div class="mt-12 border-t border-gray-700 pt-6 text-center">
+        <p class="text-gray-300">&copy; 2024 My Online Store. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  
+</body>
+</html>

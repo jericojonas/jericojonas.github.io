@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Drawing App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="leftSidebar">
+      <div class="sidebar left-sidebar" id="sidebarCircle">
+        <h2>Circle Style</h2>
+
+        <label for="circleRadius">Diameter:</label>
+        <input type="number" id="circleRadius" name="circleRadius" min="1" />
+
+        <label for="lineWidth">Line Width:</label>
+        <input type="number" id="lineWidth" name="lineWidth" min="1" />
+
+        <label for="lineColor">Line Color:</label>
+        <input type="color" id="lineColor" name="lineColor" />
+
+        <button type="button" id="applyStyleCircleBtn" onclick="circleEdit()">
+          Edit Style
+        </button>
+      </div>
+
+      <div class="sidebar left-sidebar" id="sidebarRectangle">
+        <h2>Rectangle Style</h2>
+
+        <label for="widthRect">Width:</label>
+        <input type="number" id="widthRect" name="widthRect" min="1" />
+
+        <label for="heightRect">Height:</label>
+        <input type="number" id="heightRect" name="heightRect" min="1" />
+
+        <label for="lineWidthRect">Line Width:</label>
+        <input type="number" id="lineWidthRect" name="lineWidthRect" min="1" />
+
+        <label for="lineColorRect">Line Color:</label>
+        <input type="color" id="lineColorRect" name="lineColorRect" />
+
+        <button type="button" id="applyStyleRectBtn" onclick="rectEdit()">
+          Edit Style
+        </button>
+      </div>
+
+      <div class="sidebar left-sidebar" id="sidebarTriangle">
+        <h2>Triangle Style</h2>
+
+        <label for="sideLength">Side Length:</label>
+        <input type="number" id="sideLength" name="sideLength" min="1" />
+
+        <label for="heightTri">Height:</label>
+        <input type="number" id="heightTri" name="heightTri" min="1" />
+
+        <label for="lineWidthTri">Line Width:</label>
+        <input type="number" id="lineWidthTri" name="lineWidthTri" min="1" />
+
+        <label for="lineColorTri">Line Color:</label>
+        <input type="color" id="lineColorTri" name="lineColorTri" />
+
+        <button type="button" id="applyStyleTriBtn" onclick="triEdit()">
+          Edit Style
+        </button>
+      </div>
+
+      <div class="sidebar left-sidebar" id="sidebarEllipse">
+        <h2>Ellipse Style</h2>
+
+        <label for="widthEllipse">Width:</label>
+        <input type="number" id="widthEllipse" name="widthEllipse" min="1" />
+
+        <label for="heightEllipse">Height:</label>
+        <input type="number" id="heightEllipse" name="heightEllipse" min="1" />
+
+        <label for="lineWidthEl">Line Width:</label>
+        <input type="number" id="lineWidthEl" name="lineWidthEl" min="1" />
+
+        <label for="lineColorEl">Line Color:</label>
+        <input type="color" id="lineColorEl" name="lineColorEl" />
+
+        <button type="button" id="applyStyleElBtn" onclick="elEdit()">
+          Edit Style
+        </button>
+      </div>
+    </div>
+
+    <div class="content">
+      <nav class="navigationMenu">
+        <label for="canvasSize">New Canvas Size:</label>
+        <select id="canvasSize">
+          <optgroup label="Standard Printed Sizes">
+            <option value="A2">A2</option>
+            <option value="A3">A3</option>
+            <option value="A4">A4</option>
+            <!-- Add more standard sizes as needed -->
+          </optgroup>
+          <optgroup label="Computer Screen Resolutions">
+            <option value="4K">4K</option>
+            <option value="2K">2K</option>
+            <option value="FHD">FHD</option>
+            <option value="HD">HD</option>
+            <!-- Add more screen resolutions as needed -->
+          </optgroup>
+        </select>
+        <button type="button" id="newCanvasBtn">New Canvas</button>
+        <button type="button" id="clearCanvasBtn">Clear Canvas</button>
+      </nav>
+
+      <form id="defaultForm">
+        <label for="defaultLineWidth">Line Width:</label>
+        <input
+          type="number"
+          id="defaultLineWidth"
+          name="defaultLineWidth"
+          min="1"
+          value="1"
+        />
+
+        <label for="defaultLineColor">Line Color:</label>
+        <input
+          type="color"
+          id="defaultLineColor"
+          name="defaultLineColor"
+          value="#000000"
+        />
+      </form>
+
+      <form id="shapeForm">
+        <label for="shapeType">Select Shape:</label>
+        <select id="shapeType" name="shapeType">
+          <option value="circle">Circle</option>
+          <option value="rectangle">Rectangle</option>
+          <option value="triangle">Triangle</option>
+          <option value="ellipse">Ellipse</option>
+        </select>
+        <label for="shapeCount">Number of Shapes:</label>
+        <input
+          type="number"
+          id="shapeCount"
+          name="shapeCount"
+          min="1"
+          required
+        />
+
+        <button type="button" id="drawShapeBtn">Draw</button>
+      </form>
+
+      <canvas
+        id="drawingCanvas"
+        width="500"
+        height="300"
+        onmousedown="startMove(event)"
+        onmouseup="stopMove()"
+        onmousemove="moveShape(event)"
+      ></canvas>
+    </div>
+
+    <div class="sidebar right-sidebar">
+      <h2>Layers</h2>
+      <div id="layers"></div>
+    </div>
+
+    <script src="currentValue.js"></script>
+    <script src="logic.js"></script>
+    <script src="draw.js"></script>
+    <script src="select.js"></script>
+    <script src="move.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="canvas.js"></script>
+    <script src="edit.js"></script>
+    <!--script src="script.js"></script-->
+  </body>
+</html>
