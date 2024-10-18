@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Landing Page</title>
+
+    <!-- Google Font: Asap SemiBold -->
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap CSS (optional, remove if not needed) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            background-image: url('img/bg.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full screen height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Optional overlay for darker effect */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+/* General Hero Content Styles */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: left; /* Aligns all hero text content to the left */
+    margin-left: 20px; /* Adjust as needed for alignment */
+}
+
+/* Hero Text */
+.hero-text {
+    font-family: 'Asap', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    margin-top: 700px;
+}
+
+        .hero-heading {
+            font-family: 'Source Sans Pro';
+            color: #FFF500;
+            font-size: 200px;
+            font-weight: bold;
+            position: relative;
+        }
+
+/* Container to hold subheading and button */
+.hero-subheading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Hero Subheading */
+.hero-subheading {
+    font-family: 'Asap', sans-serif;
+    font-weight: 600; /* SemiBold */
+    font-size: 30px;
+    color: white;
+    line-height: 1.5; /* Better readability for multi-line text */
+    flex: 1; /* Make subheading take up remaining space */
+}
+
+/* Button */
+.btn-hero {
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    background: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    transition: all 0.3s ease;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1)); /* Slight transparency */
+    text-align: right;
+    margin-left: 20px; /* Space between subheading and button */
+}
+
+/* Align button right with respect to heading */
+.hero-content {
+    position: relative;
+}
+
+.hero-subheading-container .btn-hero {
+    position: relative;
+    right: 20px; /* Align with hero heading */
+}
+
+/* Button hover effect */
+.btn-hero:hover {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    border-color: black;
+    color: black;
+}
+
+/* Arrow Image Styles */
+.arrow-icon {
+    position: absolute; /* Position it absolutely */
+    bottom: 45px; /* Adjust based on your layout */
+    left: 72%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the image */
+    max-width: 100px; /* Set a max width, adjust as necessary */
+    z-index: 2; /* Ensure it's above other elements */
+}
+
+
+        /* Logo Styles */
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 2;
+        }
+
+        .logo img {
+            max-width: 400px;
+        }
+
+         /* Menu Styles */
+         .menu {
+            position: absolute;
+            top: 70px;
+            right: 70px;
+            z-index: 2;
+            font-family: 'Asap', sans-serif; /* Apply Asap font */
+            font-size: 24px;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            display: inline;
+            margin-right: 24px /* Space between menu items */
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #FFF500; /* Light hover effect */
+        }
+
+        /* Get Started Button Styles */
+        .menu ul li a.get-started {
+            border: 2px solid #FFF500;
+            padding: 8px 16px;
+            border-radius: 8px; /* Rounded corners */
+            background: transparent; /* Transparent background */
+            color: white;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .menu ul li a.get-started:hover {
+            background: #FFF500;
+            color: black; /* Text changes to black on hover */
+        }
+
+/* Hero Section Styles */
+.hero-section {
+    background-image: url('img/bg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Use min-height instead of height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 20px; /* Add some padding */
+}
+
+/* Optional overlay for darker effect */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* General Hero Content Styles */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: left; /* Aligns all hero text content to the left */
+}
+
+/* Hero Text */
+.hero-text {
+    font-family: 'Asap', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    margin-top: 30%; /* Reduced from 700px */
+}
+
+/* Hero Heading */
+.hero-heading {
+    font-family: 'Source Sans Pro';
+    color: #FFF500;
+    font-size: 200px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Container to hold subheading and button */
+.hero-subheading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Hero Subheading */
+.hero-subheading {
+    font-family: 'Asap', sans-serif;
+    font-weight: 600; /* SemiBold */
+    font-size: 30px;
+    color: white;
+    line-height: 1.5; /* Better readability for multi-line text */
+    flex: 1; /* Make subheading take up remaining space */
+}
+
+/* Button */
+.btn-hero {
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    background: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    transition: all 0.3s ease;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1)); /* Slight transparency */
+    margin-left: 20px; /* Space between subheading and button */
+}
+
+/* Arrow Image Styles */
+.arrow-icon {
+    position: absolute; /* Position it absolutely */
+    bottom: 45px; /* Adjust based on your layout */
+    left: 72%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the image */
+    max-width: 100px; /* Set a max width, adjust as necessary */
+    z-index: 2; /* Ensure it's above other elements */
+}
+
+/* Logo Styles */
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 2;
+}
+
+.logo img {
+    max-width: 380px;
+}
+
+/* Menu Styles */
+.menu {
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    z-index: 2;
+    font-family: 'Asap', sans-serif; /* Apply Asap font */
+    font-size: 24px;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for layout */
+    gap: 24px; /* Space between menu items */
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #FFF500; /* Light hover effect */
+}
+
+/* Get Started Button Styles */
+.menu ul li a.get-started {
+    border: 2px solid #FFF500;
+    padding: 8px 16px;
+    border-radius: 8px; /* Rounded corners */
+    background: transparent; /* Transparent background */
+    color: white;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu ul li a.get-started:hover {
+    background: #FFF500;
+    color: black; /* Text changes to black on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .hero-heading {
+        font-size: 150px; /* Adjust for larger tablets */
+    }
+
+    .hero-text {
+        font-size: 28px; /* Adjust font size for tablet */
+    }
+
+    .hero-subheading {
+        font-size: 24px; /* Adjust subheading for tablet */
+    }
+
+    .btn-hero {
+        font-size: 22px; /* Adjust button size for tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: 2rem; /* Smaller heading for tablets */
+    }
+
+    .hero-text {
+        font-size: 24px; /* Smaller hero text for tablets */
+    }
+
+    .hero-subheading {
+        font-size: 1.2rem; /* Smaller subheading for tablets */
+    }
+
+    .btn-hero {
+        font-size: 20px; /* Smaller button for tablets */
+    }
+
+    .logo img {
+        max-width: 100px; /* Adjust logo for smaller screens */
+    }
+
+    .menu {
+        font-size: 18px; /* Adjust menu font size for smaller screens */
+        top: 30px; /* Adjust menu position */
+        right: 30px; /* Adjust menu position */
+    }
+
+    .menu ul {
+        gap: 16px; /* Less gap for smaller screens */
+    }
+
+    .arrow-icon {
+        max-width: 80px; /* Smaller arrow icon for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-heading {
+        font-size: 1.5rem; /* Adjust heading for mobile */
+    }
+
+    .hero-text {
+        font-size: 20px; /* Adjust hero text for mobile */
+    }
+
+    .hero-subheading {
+        font-size: 1rem; /* Adjust subheading for mobile */
+    }
+
+    .btn-hero {
+        font-size: 18px; /* Smaller button for mobile */
+        padding: 8px 16px; /* Adjust padding for mobile */
+    }
+
+    .menu {
+        font-size: 16px; /* Adjust menu font size for mobile */
+        top: 20px; /* Adjust menu position */
+        right: 20px; /* Adjust menu position */
+    }
+
+    .arrow-icon {
+        max-width: 60px; /* Smaller arrow icon for mobile */
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/brand.png" alt="Brand Logo">
+        </div>
+
+        <!-- Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#get-started" class="get-started">Get Started</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <p class="hero-text">If you’re an adult living with ADHD</p>
+            <h1 class="hero-heading">GET A FRESH START</h1>
+        
+            <!-- Arrow Image -->
+            <img src="img/arrow.png" alt="Arrow" class="arrow-icon">
+            
+            <!-- Container for subheading and button -->
+            <div class="hero-subheading-container">
+                <p class="hero-subheading">
+                    Adults dealing with ADHD and other mental disorders don’t have to face them alone. 
+                    <br>Work with us and get a fresh start on life even if you feel completely behind.
+                </p>
+                <a href="#learn-more" class="btn btn-primary btn-hero">Click To Schedule An Appointment</a>
+            </div>
+        </div>
+        
+        
+    </section>
+
+    <!-- Optional Bootstrap JS (if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
