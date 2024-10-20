@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      height: 100%;
+    }
+
+    /* Hero section styling */
+    .hero {
+      background-color: #1B603B;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    /* Overlay for white noise pattern */
+    .overlay {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('img/noise.png') repeat;
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    /* Logo styling */
+    .logo {
+      z-index: 2;
+    }
+
+    .logo img {
+      width: 225px;
+    }
+
+    /* Menu styling */
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      z-index: 2;
+    }
+
+    .menu li {
+      font-size: 24px;
+      color: white;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .menu li a:hover {
+      color: #cecece;
+    }
+
+        /* Special styling for Get In Touch */
+    .menu li a.get-in-touch {
+      color: #1B603B; /* Font color */
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.90)); /* Transparent background gradient */
+      border: 1px solid white; /* White border */
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+      transition: all 0.3s ease;
+    }
+
+    .menu li a.get-in-touch:hover {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 1) 100%);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo">
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="menu">
+      <li><a href="#">Boarding</a></li>
+      <li><a href="#">Policies</a></li>
+      <li><a href="#">Charges</a></li>
+      <li><a href="#">Facilities</a></li>
+      <li><a href="#">Testimonials</a></li>
+      <li><a href="#" class="get-in-touch">Get In Touch</a></li>
+    </ul>
+
+    <!-- White Noise Overlay -->
+    <div class="overlay"></div>
+  </div>
+</body>
+</html>
