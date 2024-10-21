@@ -1,0 +1,158 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Hero section styling */
+.hero {
+  background-color: #1b603b;
+  height: 100vh;
+  padding: 40px;
+}
+
+/* Overlay for white noise pattern */
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("img/noise.png") repeat;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.atas {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+/* Logo styling */
+.logo {
+  z-index: 2;
+}
+
+.logo img {
+  width: 225px;
+}
+
+/* Menu styling */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  z-index: 2;
+}
+
+.menu li {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #fff500;
+}
+
+/* Special styling for Get In Touch */
+.menu li a.get-in-touch {
+  color: #1b603b; /* Font color */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ); /* Transparent background gradient */
+  border: 1px solid white; /* White border */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  transition: all 0.3s ease;
+}
+
+.menu li a.get-in-touch:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 75%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.left-grid {
+  font-family: "Bricolage Grotesque";
+  color: white;
+  flex: 0 0 60%;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.left-grid h1 {
+  font-size: 96px;
+  margin-top: 10px; /* Adjust as needed */
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.left-grid p {
+  font-size: 24px;
+  margin-top: 10px; /* Adjust as needed */
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.right-grid {
+  flex: 0 0 40%;
+  margin-left: 20px;
+}
+
+.right-grid img {
+  max-width: 100%; /* Ensure the image does not exceed its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Special styling for Get In Touch */
+.menu li a.order{
+  color: #1b603b; /* Font color */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ); /* Transparent background gradient */
+  border: 1px solid white; /* White border */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  transition: all 0.3s ease;
+  margin-left: -40px;
+}
+
+.menu li a.order:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 75%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.left-grid p:last-of-type {
+  margin-bottom: 40px; /* Adjust as needed */
+}

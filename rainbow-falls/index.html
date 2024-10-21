@@ -1,92 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Landing Page</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Section</title>
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Bootstrap CSS (optional, remove if not needed) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to your external styles.css file -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <!-- White Noise Overlay -->
+      <div class="overlay"></div>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap" rel="stylesheet">
-    
+      <div class="atas">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
+        </div>
 
-    <!-- Custom CSS -->
-    <style>
-        /* Hero Section Styles */
-        .hero-section {
-            background-image: url('../img/rainbow.jpeg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh; /* Full screen height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
+        <!-- Navigation Menu -->
+        <ul class="menu">
+          <li><a href="#">Boarding</a></li>
+          <li><a href="#">Policies</a></li>
+          <li><a href="#">Charges</a></li>
+          <li><a href="#">Facilities</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#" class="get-in-touch">Get In Touch</a></li>
+        </ul>
+      </div>
 
-        /* Optional overlay for darker effect */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-        }
+      <!-- Grid container below logo and menu -->
+      <div class="grid-container">
+        <!-- Left side text -->
+        <div class="left-grid">
+          <p>WHEN YOU NEED TO LEAVE, LEAVE YOUR PET IN GOOD HANDS</p>
+          <h1>Your Pet’s Favorite<br />Vacation Home</h1>
+          <p>
+            Rainbow Falls Kennel is located on a beautiful 45-acre farm, just
+            outside of Saratoga Springs in the breathtaking Adirondack
+            Mountains. The facility is run by a family with decades of pet care
+            experience who live on the farm to ensure your pets will be loved
+            like they are at home.
+          </p>
+          <ul class="menu">
+            <li><a href="#" class="order">Book Your Pet’s Vacation Today</a></li>
+          </ul>
+        </div>
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-heading {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        .hero-subheading {
-            font-size: 1.5rem;
-            margin-top: 20px;
-        }
-
-        .btn-hero {
-            margin-top: 30px;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-        }
-
-        /* Responsive text size */
-        @media (max-width: 768px) {
-            .hero-heading {
-                font-size: 2rem;
-            }
-
-            .hero-subheading {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <!--div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-heading">Welcome to Our Website</h1>
-            <p class="hero-subheading">We create amazing digital experiences.</p>
-            <a href="#learn-more" class="btn btn-primary btn-hero">Learn More</a>
-        </div-->
-    </section>
-
-    <!-- Optional Bootstrap JS (if needed) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <!-- Right side image -->
+        <div class="right-grid">
+          <img src="img/dogs.png" alt="Dogs" />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
